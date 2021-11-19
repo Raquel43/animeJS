@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.js" integrity="sha512-E378bwaeZf1nwXeJGIwTB58A5gPt5jFU3u6aTGja4ZdRFJeo/N/REKnBgNZOZlH6JdnOPO98vg2AnSGaNfCMFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #000;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            background-color: white;
+        }
+    </style>
+
+   
+</head>
+<body onload = "loadPage()">
+ 
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+   
+    <script>
+       /*  anime({
+            targets: 'div',
+            translateX: function(el, ind){
+                return ind * 100 + 100;
+            }
+        }) */
+        anime({
+            targets: 'div',
+            translateX: 400,
+            rotateZ: function(){
+                return parseInt(Math.random()*360)
+            }
+        })
+    </script>
+</body>
+</html>

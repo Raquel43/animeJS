@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.js" integrity="sha512-E378bwaeZf1nwXeJGIwTB58A5gPt5jFU3u6aTGja4ZdRFJeo/N/REKnBgNZOZlH6JdnOPO98vg2AnSGaNfCMFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </script>
+
+    <style>
+        body {
+            background-color: black
+        }
+
+        div {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+            border-radius: 50%;
+            background-color: #fff;
+            opacity: 0
+        }
+    </style>
+    <script>
+        function loadPage() {
+            const LEFT_START = 10,
+                TOP_START = 10,
+                W = 40,
+                H = 40;
+            for (let row = 0; row < 15; row++)
+                for (let col = 0; col < 30; col++) {
+                    let div = document.createElement("div");
+                    let left = LEFT_START + col * W;
+                    let top = TOP_START + row * H;
+                    div.setAttribute("style", "left: " +
+                        left + "px; top: " + top + "px");
+                    document.body.appendChild(div);
+                }
+
+            divs = Array.from(document.getElementsByTagName("div"));
+            divs.forEach(d => d.onmouseenter =
+                () => anime({
+                    targets: d,
+                    opacity: 1,
+                    direction: 'alternate'
+                }));
+
+        }
+    </script>
+</head>
+
+<body onload="loadPage()">
+</body>
+
+</html>

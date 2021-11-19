@@ -1,0 +1,38 @@
+body {
+    margin: 20px;
+    font-family: 'Lato';
+    font-weight: 300;
+    font-size: 1.2em;
+  }
+  
+  progress {
+    margin-left: 10px;
+    position: relative;
+    top: 3px;
+  }
+  
+  button {
+    background: orange;
+    color: white;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 4px;
+    font-family: 'Lato';
+    cursor: pointer;
+    border: none;
+    outline: none;
+  }
+  
+  button:hover {
+    background: blue;
+  }
+  
+  #anime-demo {
+    text-align: left;
+  }
+  
+  .controls {
+    margin-top: 0px;
+  }
+  
+  

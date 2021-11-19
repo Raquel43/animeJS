@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <title>Anime.js: Values and Units</title>
+    <style>
+        html {
+          font-size: 10px;
+        }
+        .page {
+          width: 100%;
+          max-width: 100%;
+          overflow: hidden;
+          margin: 200px auto;
+          position: relative;
+          border: 1px solid;
+        }
+        .play {
+          text-align: center;
+        }
+        #box {
+          width: 100px;
+          height: 100px;
+          background-color: #000;
+          position: relative;
+        }
+      </style>
+</head>
+<body>
+    <div class="page">
+        <div id="box"></div>
+        <div class="play">
+          <button id="play">Play</button>
+        </div>
+      </div>
+        <script>
+            const myAnim = anime({
+                targets: '#box',
+               // translateX: '100vw',//100 , 3rem
+              // translateX: [100, 200],
+               //translateX: ['2rem', '20rem'],
+               translateX: ['100px', '+=200px'],
+                duration: 1000,
+                easing: 'linear',
+                autoplay: false,
+            })
+        </script>
+
+<script>
+    document.getElementById('play')
+      .addEventListener('click', myAnim.play);
+  </script>
+    </div>
+</body>
+</html>

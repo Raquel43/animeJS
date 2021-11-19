@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <button id="cta">Pulsa aquí</button>
+    
+    <svg viewBox= "0 0 215 110"> 
+              <polygon class="polymorph" points="215,110 0, 110 0, 0 47.7, 0 215, 0" />
+     </svg>
+
+     <div id="blip">
+         <h1>Bien, esto es revelador...</h1>
+         <p>En esta portada empleamos una imagen SVG creada con un editor de imagenes. Es un proceso bastante sencillo, siempre que sean imagenes simples.</p>
+         <button id="cta2">Volver!</button><button id="inicio">Inicio</button><button id="seguir">Seguir</button>
+    
+        </div>
+
+    
+     <script src="js/anime.min.js"></script>
+     <script src="js/app.js"></script>
+
+     <script>
+let btn = document.getElementById('cta');
+let btn2 = document.getElementById('cta2');
+let btn3 = document.getElementById('inicio');
+let btn4 = document.getElementById('seguir');
+
+
+
+btn.onclick = function(){
+    let morphing = anime({
+  targets: '.polymorph',
+  points: [
+    { value: '215, 110 0, 110 0, 0 47.7, 0 67,76' },
+    { value: '215, 110 0, 110 0, 0 0, 0 67,76' },
+   ],
+  easing: 'easeOutQuad',
+  duration: 1200,
+  loop: false
+});
+
+anime({
+    targets: '#blip',
+    opacity: 1,
+    duration: 500,
+    translateY: 150
+});
+
+let promise = morphing.finished.then(()=> {
+
+    btn2.onclick = function(){
+    let morphing = anime({
+  targets: '.polymorph',
+  points: [
+    { value: '215, 110 0, 110 0, 0 47.7, 0 67,76' },
+    { value: '215,110 0, 110 0, 0 47.7, 0 215, 0' },
+   ],
+  easing: 'easeOutQuad',
+  duration: 1200,
+  loop: false
+})
+
+anime({
+    targets: '#blip',
+    opacity: 0,
+    duration: 500,
+    translateY: -800
+});
+
+    }
+})
+
+}
+
+ btn3.addEventListener('click', portada);
+
+ function portada(){
+    window.open("/./Portada/index.html");
+ }
+
+ btn4.addEventListener('click', seguir);
+
+ function seguir(){
+    window.open("/./website/index.html");
+ }
+
+//https://www.youtube.com/watch?v=2wr1iixy20I
+
+     </script>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <title>Anime.js: Function-based Values</title>
+  <style>
+    html {
+      font-size: 10px;
+    }
+    .page {
+      width: 80%;
+      max-width: 100%;
+      overflow: hidden;
+      margin: 50px auto 0;
+      position: relative;
+      border: 1px solid;
+    }
+    .play {
+      text-align: center;
+    }
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: #000;
+      position: relative;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="box js-box"></div>
+    <div class="box js-box"></div>
+    <div class="play">
+      <button id="play">Play</button>
+    </div>
+  </div>
+  <script>
+    const myAnim = anime({
+      targets: '.js-box',
+      autoplay: false,
+
+      duration: setDuration,//1500,
+      delay: setDelay, //500,
+
+     // translateX: 200,
+     translateX: {
+       value: [xInitial, xPosRelative],
+       duration: 1000,
+     },
+    scale: 0.5,
+    });
+
+    /* functions values */
+    function xPosAbsolute(node, index){
+     /* i = 0=> 100
+        i = 1=> 200
+      */
+     return (index * 100) + 100;
+    }
+
+    function xPosRelative(node, index){
+    /*  i=0 => +=100
+     i=1 => +=200 */
+     return '+=' + ((index * 100) + 100);
+    }
+
+    function xInitial(node, index){
+      /*
+      i = 0 => 50
+      i = 1 => 100
+      */
+     return (index * 50) +50;
+    }
+
+    function setDuration(node, index){
+      // i = 0 => 500ms
+      // i = 1 => 1000ms
+      return index * 500 + 500;
+    }
+
+    function setDelay(node, index){
+      //i = 0 => 0ms
+      //i = 1 => 1000ms
+      return index * 1000;
+    }
+
+
+  </script>
+  <script>
+    document.getElementById('play')
+      .addEventListener('click', myAnim.play);
+  </script>
+</body>
+</html>

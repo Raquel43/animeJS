@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.js" integrity="sha512-E378bwaeZf1nwXeJGIwTB58A5gPt5jFU3u6aTGja4ZdRFJeo/N/REKnBgNZOZlH6JdnOPO98vg2AnSGaNfCMFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        body{
+            background-color: #000;
+        }
+       div{
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        let tl=anime.timeline();
+       /*  tl.add({
+            targets: 'div', translateX: 200
+        }).
+        add({
+            targets: 'div', translateX: 400
+        }).
+        add({
+            targets: 'div', translateX: '-=400'
+        }); */
+        let divs = document.getElementsByTagName('div');
+        tl.add({targets: divs[0], translateX: 150}).
+            add({targets: divs[1], translateY: '-=100'}).
+            add({targets: divs[2], translateY: '-=100'}).
+            add({targets: divs[3], translateY: '-=100'}).
+            add({targets:divs[0], translateX:'-=150',
+                translateY: 350, backgroundColor: '#ab3'});
+    </script>
+</body>
+</html>

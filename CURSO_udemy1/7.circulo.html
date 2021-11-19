@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.js" integrity="sha512-E378bwaeZf1nwXeJGIwTB58A5gPt5jFU3u6aTGja4ZdRFJeo/N/REKnBgNZOZlH6JdnOPO98vg2AnSGaNfCMFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+    <style>
+
+div {
+     width: 100px;
+     height: 100px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background: red;
+}
+    </style>
+</head>
+<body>
+    <h1>Direction and Loop</h1>
+    <div></div>
+    <script>
+      /*   anime({
+            targets: 'div', translateY: 400, height: 200
+        })
+        anime({
+            targets: 'div', translateY: 400, height: 200,
+            direction: 'reverse'
+        }) */
+       /*  anime({
+            targets: 'div', translateY: 400, height: 200,
+            direction: 'alternate'
+        }) */
+        anime({
+            targets: 'div', translateY: 400, height: 200, loop: true,
+            direction: 'alternate'
+        })
+
+    </script>
+</body>
+</html>

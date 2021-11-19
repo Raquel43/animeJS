@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.js" integrity="sha512-E378bwaeZf1nwXeJGIwTB58A5gPt5jFU3u6aTGja4ZdRFJeo/N/REKnBgNZOZlH6JdnOPO98vg2AnSGaNfCMFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+          
+        <style>
+            .box, #divRed {
+                width: 100px;
+                height: 100px;
+                margin: 5px;
+            }
+            
+            .box {
+                background-color: dodgerblue
+            }
+            
+            #divRed {
+                background-color: red
+            }
+            
+            
+
+        </style>
+    </head>
+    <body>
+        <div id = "divRed"></div>
+        <div class = "box"></div>
+        <div class = "box"></div>
+        <h1>Hello</h1>
+        <h2>Bye</h2> 
+        <script>
+        //Animacion de etiquetas
+       /*   const anim = window.anime({
+          targets: 'h1',
+          translateX:300
+      }); */
+     /*  const anim = window.anime({
+          targets: 'div',
+          translateX:300
+      }) */
+      //Animacion de identificadores
+       /*  const anim = window.anime({
+          targets: '#divRed',
+          translateX:300
+      }); 
+      const anim2 = window.anime({
+          targets: '.box',
+          translateX:300
+      }); 
+      const anim3 = window.anime({
+          targets: 'div',
+          translateX:0
+      });  */
+
+     /*  const anim4 = window.anime({
+          targets: document.getElementsByTagName("div")[1],
+          translateX: 300
+      }); */
+
+     /*  const anim5 = window.anime({
+          targets: ["h1", "h2"],
+          translateX: 300
+      }) */
+
+      const anim6 = window.anime({
+        targets: ["#divRed", document.getElementsByTagName("div")[2], "h2"],
+        translateX: 300
+      })
+
+        </script>
+    </body>
+    
+
+
+</html>

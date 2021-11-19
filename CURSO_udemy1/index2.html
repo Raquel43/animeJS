@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.js" integrity="sha512-E378bwaeZf1nwXeJGIwTB58A5gPt5jFU3u6aTGja4ZdRFJeo/N/REKnBgNZOZlH6JdnOPO98vg2AnSGaNfCMFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+    #box{
+        width: 100px;
+        height: 100px;
+        background-color: #000;
+    }
+</style>
+
+</head>
+<body>
+  <div id="box"></div>  
+  <script>
+      //add animation
+      const anim = window.anime({
+          targets: '#box',
+          duration: 2000,
+          opacity: 0,
+          easing: 'linear',
+      });
+  </script>
+</body>
+</html>

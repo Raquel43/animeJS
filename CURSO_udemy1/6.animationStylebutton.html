@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.js" integrity="sha512-E378bwaeZf1nwXeJGIwTB58A5gPt5jFU3u6aTGja4ZdRFJeo/N/REKnBgNZOZlH6JdnOPO98vg2AnSGaNfCMFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            background-color: #000;
+        }
+    </style>
+
+    <script>
+        function loadPage(){
+            document.getElementById("cmdStart").addEventListener("click", start);
+        }
+        function start(){
+            delay = 100;
+            divs = Array.from(document.getElementsByTagName("div"));
+            divs.forEach((d, i) => {
+                anime({
+                    targets: d,
+                     translateX: 400,
+                     duration: 2000,
+                     delay: delay * i
+                })
+                
+            });
+        }
+    </script>
+</head>
+<body onload = "loadPage()">
+    <h1>animation Style</h1>
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+    <button id= "cmdStart">Start</button>
+    
+</body>
+</html>

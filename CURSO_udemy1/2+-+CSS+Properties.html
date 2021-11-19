@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js">
+        </script>
+          
+        <style>
+            .box {
+                width: 100px;
+                height: 100px;
+                margin: 5px;
+                background-color: #000;
+            }
+            #absDiv {
+                position: absolute;
+                left: 250px;
+                top: 300px;
+                width: 100px;
+                height: 100px;
+                background-color: #33ff44
+            }
+            
+            
+            
+
+        </style>
+    </head>
+    <body>
+        <h1>CSS Properties</h1>
+        <div class = "box"></div>
+        <div class = "box"></div>
+        <div class = "box"></div>
+        <div id = "absDiv"></div>
+    
+        <button type="button" id="button">Botón</button>
+        <script>
+        /*  const anim = anime({
+          targets: '.box',
+          backgroundColor: '#aa55ff'
+      });  */
+      const anim = anime({
+          targets: '.box',
+         width: 300
+      }); 
+       /*  const button = document.getElementById('button');
+            button.addEventListener('click',anim);
+        */
+      const anim2 = anime({
+          targets: '.box',
+          borderRadius: "50%"
+      });
+
+      const anim3 = anime({
+          targets: '.box',
+         opacity: 0.2,
+      });
+
+      //Movemos la caja verde
+
+      const anim4= anime({
+          targets: "#absDiv", top: 50, left: 40});
+    const anim5= anime({
+    targets: "#absDiv", width: 400, height: 300});
+
+    anime({
+        targets: "h1", fontSize: 40
+    })
+
+    anime({
+        targets: "h1", backgroundColor: "#00ffaa"
+    })
+        </script>
+    </body>
+    
+
+
+</html>
